@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me & Projects</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />  
+
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#d4a373',
+            accent: '#B85C38',
+            'background-light': '#F5F1EB',
+            'background-dark': '#1e1914',
+            'text-light': '#3E2C23',
+            'text-dark': '#f8f7f6'
+          },
+          fontFamily: {
+            display: ['Inter', 'sans-serif'],
+            heading: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-background-light dark:bg-background-dark backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2">
+      <img
+        src="images/logo.jpg"
+        alt="Logo"
+        class="h-12 w-12 rounded-md hover:scale-105 transition-transform"
+      />
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      aria-label="Toggle menu"
+    >
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+
+    <!-- Desktop Menu -->
+    <ul
+      class="hidden md:flex items-center gap-2 font-medium text-[#191410] dark:text-white relative px-2 py-2 rounded-xl bg-white/60 dark:bg-white/5 backdrop-blur-md"
+    >
+      <li>
+        <a
+          href="about.html"
+          class="px-4 py-2 rounded-lg hover:bg-primary hover:text-black transition-colors"
+        >
+          About
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="index.html#projects"
+          class="px-4 py-2 rounded-lg hover:bg-primary hover:text-black transition-colors"
+        >
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="assets/resume/Kafewo_Ajiguabom_Titus_Resume.pdf"
+          download
+          class="flex items-center gap-2 px-4 py-2 bg-primary text-black font-semibold rounded-lg hover:scale-105 transition-transform"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2
+                 M7 10l5 5m0 0l5-5m-5 5V4"/>
+          </svg>
+          Resume
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="index.html#contact"
+          class="px-4 py-2 bg-[#8C6A55] text-white font-semibold rounded-lg hover:bg-[#A17D67] hover:scale-105 transition-transform"
+        >
+          Get In Touch
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<ul
+  id="mobile-menu"
+  class="hidden md:hidden flex-col gap-3 px-6 py-4 bg-background-light dark:bg-background-dark shadow-md"
+>
+  <li>
+    <a href="about.html" class="block py-2 px-4 rounded-lg hover:bg-primary hover:text-black transition-colors">
+      About
+    </a>
+  </li>
+
+  <li>
+    <a href="index.html#projects" class="block py-2 px-4 rounded-lg hover:bg-primary hover:text-black transition-colors">
+      Projects
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="assets/resume/Kafewo_Ajiguabom_Titus_Resume.pdf"
+      download
+      class="flex items-center gap-2 py-2 px-4 bg-primary text-black rounded-lg hover:scale-105 transition-transform"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2
+             M7 10l5 5m0 0l5-5m-5 5V4"/>
+      </svg>
+      Resume
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="index.html#contact"
+      class="block py-2 px-4 bg-[#8C6A55] text-white font-semibold rounded-lg hover:bg-[#A17D67] hover:scale-105 transition-transform"
+    >
+      Get In Touch
+    </a>
+  </li>
+</ul>
+  
+<!-- ABOUT -->
+<section id="about" class="py-24 relative bg-primary/5 dark:bg-background-dark/20">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Image -->
+    <div class="flex justify-center md:justify-start animate-fade-left">
+      <img src="images/about img.jpg" 
+           alt="Portrait of Ajigu Titus Kafewo"
+           class="w-4/5 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-2xl object-contain md:object-cover shadow-lg" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="animate-fade-up z-10">
+      <h2 class="text-3xl font-heading font-bold mb-4">About Me</h2>
+
+      <p class="leading-relaxed mb-4">
+        Hi, I’m Ajigu Titus Kafewo. I work at the intersection of software development and GIS, transforming raw spatial data into actionable insights that people can actually use.
+      </p>
+      <p class="leading-relaxed mb-4">
+        I love building geospatial tools, creating web and mobile applications, and exploring AI and automation to solve real-world problems.
+      </p>
+      <p class="leading-relaxed mb-6">
+        Curious by nature, I’m always eager to learn new technologies, experiment with innovative ideas, and collaborate on projects that make a meaningful impact.
+      </p>
+
+      <!-- Core Skills -->
+      <h3 class="font-bold mb-2">Software Development:</h3>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">Python</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">Flask</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">PostGIS</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">React</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">JavaScript</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">Flutter</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">Dart</span>
+        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">React Native</span>
+      </div>
+
+      <h3 class="font-bold mb-2">GIS & Surveying:</h3>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">Leaflet.js</span>
+        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">ArcGIS</span>
+        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">AutoCAD</span>
+        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">Google Earth Engine</span>
+        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">PostGIS</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 bg-[#efe8df] dark:bg-[#1c1712]">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Section Header -->
+    <header class="mb-12 text-center animate-fade-up">
+      <h2 class="text-3xl font-heading font-bold">My Projects</h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">
+        Selected software & geospatial work
+      </p>
+    </header>
+
+    <!-- FILTER BUTTONS -->
+    <div class="flex justify-center gap-3 mb-12 animate-fade-up">
+      <button
+        class="filter-btn px-4 py-2 rounded-full bg-primary text-white text-sm font-medium"
+        data-filter="all">
+        All
+      </button>
+
+      <button
+        class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-[#3a3227] text-gray-800 dark:text-white text-sm font-medium"
+        data-filter="software">
+        Software
+      </button>
+
+      <button
+        class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-[#3a3227] text-gray-800 dark:text-white text-sm font-medium"
+        data-filter="gis">
+        GIS
+      </button>
+    </div>
+
+    <!-- FEATURED PROJECT -->
+    <div class="mb-16 bg-white dark:bg-[#2a241e] rounded-xl shadow-lg overflow-hidden grid md:grid-cols-2 animate-fade-up project-card software">
+
+      <!-- Image -->
+      <div class="relative overflow-hidden">
+        <div
+          class="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110"
+          style="background-image:url('images/machvet.jpg');">
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="p-8 flex flex-col justify-center gap-4">
+        <span class="text-primary font-semibold text-sm uppercase">
+          Featured Project
+        </span>
+
+        <h3 class="text-2xl font-bold">Machvet</h3>
+
+        <p class="text-gray-600 dark:text-gray-400">
+          A modern agro-vet web platform built to showcase products, services,
+          and brand presence with a clean, responsive user interface.
+        </p>
+
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-2 text-sm">
+          <span class="px-3 py-1 bg-primary/20 rounded-full">HTML</span>
+          <span class="px-3 py-1 bg-primary/20 rounded-full">CSS</span>
+          <span class="px-3 py-1 bg-primary/20 rounded-full">JavaScript</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-3 mt-4">
+          <a href="https://machvet.vercel.app/" target="_blank"
+             class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-accent transition">
+            View Live
+          </a>
+          <a href="https://github.com/yourusername/project-alpha" target="_blank"
+             class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#3a3227] transition">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT GRID -->
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <!-- Project Card 1 -->
+  <article
+    class="project-card software bg-white dark:bg-[#2a241e] rounded-lg overflow-hidden shadow hover-lift animate-fade-up focus-within:ring-2 focus-within:ring-primary"
+    tabindex="0"
+  >
+
+    <div class="relative aspect-video overflow-hidden group">
+      <div
+        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+        style="background-image:url('images/machvet.jpg');">
+      </div>
+
+      <div
+        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+      >
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="px-2 py-1 bg-white/90 text-black rounded">HTML</span>
+          <span class="px-2 py-1 bg-white/90 text-black rounded">CSS</span>
+          <span class="px-2 py-1 bg-white/90 text-black rounded">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-5 flex flex-col gap-3">
+      <h3 class="font-bold text-lg">Machvet</h3>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        An agro-vet business website with responsive design.
+      </p>
+
+      <div class="flex gap-2 mt-3">
+        <a
+          href="https://machvet.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="px-3 py-1 bg-primary text-white rounded-lg text-sm flex-1 text-center transition hover:scale-105"
+        >
+          View Live
+        </a>
+
+        <a
+          href="https://github.com/yourusername/project-alpha"
+          target="_blank"
+          rel="noopener"
+          class="px-3 py-1 bg-gray-200 dark:bg-[#3a3227] rounded-lg text-sm flex-1 text-center transition hover:bg-gray-300 dark:hover:bg-[#463c2f]"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project Card 2 -->
+  <article
+    class="project-card gis bg-white dark:bg-[#2a241e] rounded-lg overflow-hidden shadow hover-lift animate-fade-up focus-within:ring-2 focus-within:ring-primary"
+    tabindex="0"
+  >
+
+    <div class="relative aspect-video overflow-hidden group">
+      <div
+        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+        style="background-image:url('images/EIa.png');">
+      </div>
+
+      <div
+        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+      >
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="px-2 py-1 bg-white/90 text-black rounded">GNSS</span>
+          <span class="px-2 py-1 bg-white/90 text-black rounded">GIS</span>
+          <span class="px-2 py-1 bg-white/90 text-black rounded">Leaflet</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-5 flex flex-col gap-3">
+      <h3 class="font-bold text-lg">EIA Prototype</h3>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        An environmental impact assessment screening tool.
+      </p>
+
+      <div class="flex gap-2 mt-3">
+        <a
+          href="https://eia-prototype-1.onrender.com"
+          target="_blank"
+          rel="noopener"
+          class="px-3 py-1 bg-primary text-white rounded-lg text-sm flex-1 text-center transition hover:scale-105"
+        >
+          View Live
+        </a>
+
+        <span
+          class="px-3 py-1 bg-gray-200 dark:bg-[#3a3227] rounded-lg text-sm flex-1 text-center opacity-70 cursor-not-allowed"
+        >
+          Code (Private)
+        </span>
+      </div>
+    </div>
+  </article>
+  
+  <!-- Project Card 3 -->
+<article
+  class="project-card software bg-white dark:bg-[#2a241e] rounded-lg overflow-hidden shadow hover-lift animate-fade-up focus-within:ring-2 focus-within:ring-primary"
+  tabindex="0"
+>
+
+  <div class="relative aspect-video overflow-hidden group">
+    <div
+      class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+      style="background-image:url('images/Loanmate image.png');">
+    </div>
+
+    <div
+      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+    >
+      <div class="flex flex-wrap gap-2 text-xs">
+        <span class="px-2 py-1 bg-white/90 text-black rounded">Flask</span>
+        <span class="px-2 py-1 bg-white/90 text-black rounded">Python</span>
+        <span class="px-2 py-1 bg-white/90 text-black rounded">PostgreSQL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-5 flex flex-col gap-3">
+    <h3 class="font-bold text-lg">LoanMate – Financial Web Application (Test Product)</h3>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+    A web application that enables users to register, save, request loans, and manage accounts
+    </p>
+
+    <div class="flex gap-2 mt-3">
+      <a
+        href="https://loanmart.onrender.com"
+        class="px-3 py-1 bg-primary text-white rounded-lg text-sm flex-1 text-center transition hover:scale-105"
+      >
+        View Live
+      </a>
+
+      <a
+        href="#"
+        class="px-3 py-1 bg-gray-200 dark:bg-[#3a3227] rounded-lg text-sm flex-1 text-center transition hover:bg-gray-300 dark:hover:bg-[#463c2f]"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</article>
+
+</div>
+<!-- CONTACT FORM -->
+<section id="contact-form" class="py-20 bg-background-light dark:bg-background-dark">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center mb-4 animate-fade-up">
+      Send Me a Message
+    </h2>
+
+    <p class="text-center text-gray-500 dark:text-gray-400 mb-10 animate-fade-up delay-1">
+      Have a project or question? I’ll respond as soon as possible.
+    </p>
+
+    <form
+      action="mailto:youremail@example.com"
+      method="POST"
+      enctype="text/plain"
+      class="space-y-6 animate-fade-up delay-2"
+    >
+
+      <!-- Name -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Your Name</label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full rounded-lg border-gray-300 dark:border-white/10 bg-white dark:bg-black/30 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Your Email</label>
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full rounded-lg border-gray-300 dark:border-white/10 bg-white dark:bg-black/30 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Message</label>
+        <textarea
+          name="message"
+          rows="5"
+          required
+          class="w-full rounded-lg border-gray-300 dark:border-white/10 bg-white dark:bg-black/30 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+        ></textarea>
+      </div>
+
+      <!-- Button -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-black font-bold rounded-lg hover:scale-105 transition-transform"
+        >
+          <span class="material-symbols-outlined">send</span>
+          Send Message
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200/50 dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- Top -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+      <!-- Logo / Name -->
+      <div class="flex items-center gap-3">
+        <div class="p-1 bg-primary rounded-xl shadow-md">
+          <img
+            src="images/logo.jpg"
+            alt="Kafewo Logo"
+            class="h-9 w-9 rounded-lg object-cover"
+          />
+        </div>
+        <span class="font-bold text-gray-900 dark:text-white">
+          Kafewo Ajiguabom Titus
+        </span>
+      </div>
+
+      <!-- Footer Nav -->
+      <nav class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+        <a href="index.html#projects" class="hover:text-primary transition">Projects</a>
+        <a href="index.html#skills" class="hover:text-primary transition">Skills</a>
+        <a href="about.html" class="hover:text-primary transition">About</a>
+        <a href="index.html#contact" class="hover:text-primary transition">Contact</a>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="flex gap-4">
+        <a
+          href="https://github.com/Ajigu777"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">code</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/kafewo-ajiguabom-titus-9294b2334"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">work</span>
+        </a>
+
+        <a
+          href="https://wa.me/2349158929452"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">call</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="my-6 border-t border-gray-200/50 dark:border-white/10"></div>
+
+    <!-- Bottom -->
+    <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+      © <span id="year"></span> Kafewo Ajiguabom Titus. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- Auto Year -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+  
+  <!-- Shared Script -->
+  <script src="script.js"></script>
+</body>
+</html>

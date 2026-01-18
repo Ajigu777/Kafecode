@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Landing Page</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#d4a373',
+            'background-light': '#f8f7f6',
+            'background-dark': '#1e1914'
+          },
+          fontFamily: {
+            display: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="relative flex min-h-screen flex-col">
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center group">
+      <div class="p-2 bg-primary rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
+        <img src="images/logo.jpg" alt="Kafewo Logo" class="h-12 w-12 rounded-lg object-cover" />
+      </div>
+    </a>
+
+    <!-- Desktop Nav Inner Container -->
+    <nav class="hidden md:flex gap-4 text-sm font-medium 
+                px-4 py-2 rounded-full backdrop-blur-md transition-colors duration-500"
+         id="nav-links-container">
+      <a href="about.html#projects" class="relative group px-3 py-1 rounded-full hover:bg-primary/30 transition-all">Projects
+        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+      </a>
+      <a href="about.html#skills" class="relative group px-3 py-1 rounded-full hover:bg-primary/30 transition-all">Skills
+        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+      </a>
+      <a href="about.html" class="relative group px-3 py-1 rounded-full hover:bg-primary/30 transition-all">About
+        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+      </a>
+      <a href="about.html#contact" class="relative group px-3 py-1 rounded-full hover:bg-primary/30 transition-all">Contact
+        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-gray-900 dark:text-white focus:outline-none" aria-label="Open menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden flex-col gap-3 mt-3 md:hidden text-center text-sm font-medium">
+    <a href="about.html#projects" class="block py-2 px-4 rounded-full hover:bg-primary/30 transition-all">Projects</a>
+    <a href="about.html#skills" class="block py-2 px-4 rounded-full hover:bg-primary/30 transition-all">Skills</a>
+    <a href="about.html" class="block py-2 px-4 rounded-full hover:bg-primary/30 transition-all">About</a>
+    <a href="about.html#contact" class="block py-2 px-4 rounded-full hover:bg-primary/30 transition-all">Contact</a>
+  </nav>
+</header>
+
+    <!-- HERO SECTION -->
+<section class="relative min-h-[90vh] flex items-center justify-center bg-[#6B4F3C]">
+
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-top bg-no-repeat"
+    style="background-image: url('images/hero-image.png');">
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#6B4F3C]/70 to-[#6B4F3C]/30"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 text-center text-white animate-fade-up px-4 pt-20">
+
+    <h1 class="text-5xl font-black animate-fade-up delay-1">
+      Kafewo Ajiguabom Titus
+    </h1>
+
+    <p class="mt-3 text-xl animate-fade-up delay-2">
+      Software & Geospatial Developer
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-6 flex flex-wrap gap-3 justify-center animate-fade-up delay-3">
+
+      <!-- View Projects -->
+      <a
+        href="about.html#projects"
+        class="px-5 py-2.5 text-sm bg-primary text-black font-semibold rounded-md
+               hover:scale-105 transition-transform">
+        View Projects
+      </a>
+
+      <!-- Download Resume -->
+      <a
+        href="assets/resume/Kafewo_Ajiguabom_Titus_Resume.pdf"
+        download
+        class="flex items-center gap-2 px-5 py-2.5 text-sm
+               border border-white text-white font-semibold rounded-md
+               hover:bg-white hover:text-black hover:scale-105 transition-all">
+
+        <!-- Download Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2
+                   M7 10l5 5m0 0l5-5m-5 5V4"/>
+        </svg>
+
+        Resume
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- SKILLS SECTION -->
+<section id="skills" class="py-12 bg-background-light dark:bg-background-dark">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <h2 class="text-3xl font-bold text-center text-[#191410] dark:text-white">My Skills</h2>
+
+    <!-- Category Filter Buttons -->
+    <div class="flex gap-2 justify-center mt-6 mb-4">
+      <button class="filter-btn bg-primary text-black px-4 py-1 rounded-full" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-200 dark:bg-gray-700 text-black px-4 py-1 rounded-full" data-filter="software">Software</button>
+      <button class="filter-btn bg-gray-200 dark:bg-gray-700 text-black px-4 py-1 rounded-full" data-filter="surveying">GIS</button>
+    </div>
+
+    <!-- Skill Cards Grid -->
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4 mt-4">
+
+      <!-- SOFTWARE SKILLS -->
+
+      <!-- JavaScript -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-1">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_yp84oqkWDecYyNaF0PLVEalLlwBNlXktmxCqSAWnUCul5P7OPaSJB7USOo0YPn7mENV0JyDpdqMK7AI9Hl5eLIQqkQYQ95vH0LRvxHPNzHcKobWWEDdxhLD_HG6Z2QjGqJJ-BtySNH7TE5vjJrJ1J5g5ORMi5vadRNC6aIW0pbJM00M7bZvizOyt-WXE_lSS_-4vlM9FwXmhujtZ-wYWMSYLfYy6psFVNajgjnj0cGt6fEyfC4UYhrIwThDSrElsI09Z4jESQKqD" alt="JavaScript Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">JavaScript</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Building dynamic user interfaces for web applications.
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-2">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/python-seeklogo.png" alt="Python Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Python</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Scripting, data analysis, and backend development.
+        </div>
+      </div>
+
+      <!-- React -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-3">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/react-seeklogo.png" alt="React Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">React</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Crafting modern, single-page applications.
+        </div>
+      </div>
+
+      <!-- HTML5 -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-4">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/html logo.jpg" alt="HTML5 Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">HTML5</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Advanced</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Building semantic and structured web pages.
+        </div>
+      </div>
+
+      <!-- CSS3 -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-5">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/css logo.png" alt="CSS3 Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">CSS3</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Advanced</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Styling responsive and interactive layouts.
+        </div>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-6">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/tailwind-logo.png" alt="Tailwind Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Tailwind CSS</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Rapid UI development with utility classes.
+        </div>
+      </div>
+
+
+      <!-- Git -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-8">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/git-icon.png" alt="Git Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Git</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Version control and collaboration.
+        </div>
+      </div>
+
+      <!-- Flutter (Beginner) -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-9">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/flutter.png" alt="Flutter Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Flutter</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Beginner</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Building cross-platform mobile applications.
+        </div>
+      </div>
+
+      <!-- Postgre-sql (Beginner) -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-10">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/postgre-sql-seeklogo.png" alt="Postgre-sql" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">PostgreSQL</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Beginner</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          used in the creation of tables and rows for web database.
+        </div>
+      </div>
+
+      <!-- React Native (Beginner) -->
+      <div class="group skill-card software relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-11">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/react-native.png" alt="React Native Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">React Native</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Beginner</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Building cross-platform mobile apps with React.
+        </div>
+      </div>
+
+      <!-- SURVEYING SKILLS -->
+
+      <!-- Leaflet.js -->
+      <div class="group skill-card surveying relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-12">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/leaflet-seeklogo.png" alt="Leaflet.js Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Leaflet.js</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Creating flexible and beautiful web maps.
+        </div>
+      </div>
+
+      <!-- ArcGIS -->
+      <div class="group skill-card surveying relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-13">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/arc gis.png" alt="ArcGIS Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">ArcGIS</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Geospatial analysis and processing.
+        </div>
+      </div>
+
+      <!-- Google Earth Engine -->
+      <div class="group skill-card surveying relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-14">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/googleearth-engine_104576.png" alt="Google Earth Engine Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">Google Earth Engine</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Utilizing GPS/GNSS technology for accurate land measurement.
+        </div>
+      </div>
+
+      <!-- AutoCAD -->
+      <div class="group skill-card surveying relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-15">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/autocad-icon.png" alt="AutoCAD Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">AutoCAD</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Designing cadastral and topographic drawings.
+        </div>
+      </div>
+
+      <!-- QGIS -->
+      <div class="group skill-card surveying relative flex flex-col gap-3 p-4 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-16">
+        <div class="w-full aspect-square bg-slate-100 dark:bg-background-dark rounded-lg flex items-center justify-center">
+          <img class="h-16 w-16 object-contain" src="images/qgis_logo_icon_168038.png" alt="QGIS Logo" />
+        </div>
+        <div>
+          <p class="text-[#191410] dark:text-white text-base font-medium">QGIS</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Intermediate</p>
+        </div>
+        <div class="overlay absolute inset-0 bg-black/80 text-white p-4 rounded-xl opacity-0 transition-opacity flex items-center justify-center text-center text-sm">
+          Geospatial data analysis and map creation.
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-24 bg-background-light dark:bg-background-dark">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Section Header -->
+    <header class="mb-14 text-center">
+      <h2 class="text-3xl font-heading font-bold animate-fade-up">
+        Experience
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-2 animate-fade-up delay-1">
+        What I do and how I create impact
+      </p>
+    </header>
+
+    <!-- Experience Cards -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Card 1 -->
+      <div
+        class="relative bg-white dark:bg-background-dark/60 rounded-2xl p-7 shadow-md
+               hover:shadow-xl hover:-translate-y-2 transition-all duration-300
+               animate-fade-up delay-2">
+
+        <!-- Accent Bar -->
+        <span class="absolute left-0 top-6 h-12 w-1 bg-primary rounded-full"></span>
+
+        <h3 class="text-xl font-semibold mb-2">
+          Software & Geospatial Developer
+        </h3>
+
+        <p class="text-sm text-primary font-medium mb-4">
+          Web • GIS • Automation
+        </p>
+
+        <ul class="space-y-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+          <li>Design and build modern web applications with responsive interfaces.</li>
+          <li>Create geospatial tools for mapping, spatial analysis, and visualization.</li>
+          <li>Integrate GIS data with web technologies for real-world use cases.</li>
+          <li>Automate workflows to improve efficiency and data accuracy.</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="relative bg-white dark:bg-background-dark/60 rounded-2xl p-7 shadow-md
+               hover:shadow-xl hover:-translate-y-2 transition-all duration-300
+               animate-fade-up delay-3">
+
+        <!-- Accent Bar -->
+        <span class="absolute left-0 top-6 h-12 w-1 bg-accent rounded-full"></span>
+
+        <h3 class="text-xl font-semibold mb-2">
+          Surveying & GIS Practice
+        </h3>
+
+        <p class="text-sm text-accent font-medium mb-4">
+          GNSS • Mapping • Spatial Data
+        </p>
+
+        <ul class="space-y-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+          <li>Collect and analyze spatial data using GNSS and GIS tools.</li>
+          <li>Transform raw field data into meaningful digital maps.</li>
+          <li>Apply geospatial techniques to land and environmental projects.</li>
+          <li>Bridge traditional surveying methods with modern digital solutions.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT SECTION / FOOTER -->
+    <section id="contact" class="bg-background-light dark:bg-background-dark py-20">
+      <div class="px-4 sm:px-8 md:px-16 lg:px-40 flex justify-center">
+        <div class="max-w-[960px] w-full">
+
+          <h2 class="text-[#191410] dark:text-white text-[28px] sm:text-3xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5 text-center animate-fade-up scroll-animate">
+            Get In Touch
+          </h2>
+
+          <p class="text-center text-gray-500 dark:text-gray-400 px-4 pb-10 animate-fade-up delay-1 scroll-animate">
+            Interested in working together or have a project in mind? Let’s connect.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+
+            <!-- X (Twitter) -->
+            <a href="https://x.com/Kafecode?s=09" target="_blank" class="group bg-white dark:bg-background-dark/50 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-1 scroll-animate">
+              <span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">public</span>
+              <p class="text-[#191410] dark:text-white font-medium">X (Twitter)</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Follow me on X</p>
+            </a>
+
+          <!-- GitHub -->
+            <a href="https://github.com/Ajigu777" target="_blank" class="group bg-white dark:bg-background-dark/50 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-2 scroll-animate">
+              <span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">code</span>
+              <p class="text-[#191410] dark:text-white font-medium">GitHub</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Open-source work</p>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/kafewo-ajiguabom-titus-9294b2334" target="_blank" class="group bg-white dark:bg-background-dark/50 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-3 scroll-animate">
+              <span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">work</span>
+              <p class="text-[#191410] dark:text-white font-medium">LinkedIn</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Professional profile</p>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/2349158929452" target="_blank" class="group bg-white dark:bg-background-dark/50 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all animate-fade-up delay-4 scroll-animate">
+              <span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">call</span>
+              <p class="text-[#191410] dark:text-white font-medium">WhatsApp</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Quick response</p>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- FOOTER -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200/50 dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- Top -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+      <!-- Logo / Name -->
+      <div class="flex items-center gap-3">
+        <div class="p-1 bg-primary rounded-xl shadow-md">
+          <img
+            src="images/logo.jpg"
+            alt="Kafewo Logo"
+            class="h-9 w-9 rounded-lg object-cover"
+          />
+        </div>
+        <span class="font-bold text-gray-900 dark:text-white">
+          Kafewo Ajiguabom Titus
+        </span>
+      </div>
+
+      <!-- Footer Nav -->
+      <nav class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+        <a href="index.html#projects" class="hover:text-primary transition">Projects</a>
+        <a href="index.html#skills" class="hover:text-primary transition">Skills</a>
+        <a href="about.html" class="hover:text-primary transition">About</a>
+        <a href="index.html#contact" class="hover:text-primary transition">Contact</a>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="flex gap-4">
+        <a
+          href="https://github.com/Ajigu777"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">code</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/kafewo-ajiguabom-titus-9294b2334"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">work</span>
+        </a>
+
+        <a
+          href="https://wa.me/2349158929452"
+          target="_blank"
+          class="hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined">call</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="my-6 border-t border-gray-200/50 dark:border-white/10"></div>
+
+    <!-- Bottom -->
+    <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+      © <span id="year"></span> Kafewo Ajiguabom Titus. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- Auto Year -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+  
+
+  <!-- External Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
